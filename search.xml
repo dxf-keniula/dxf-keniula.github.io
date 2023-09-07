@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test</title>
-    <url>/2023/09/08/test/</url>
-    <content><![CDATA[<p><img src="/2023/09/08/test/1.jpg"></p>
-]]></content>
-      <tags>
-        <tag>image</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用hexo部署个人博客</title>
     <url>/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h1 id="使用hexo部署个人博客"><a href="#使用hexo部署个人博客" class="headerlink" title="使用hexo部署个人博客"></a>使用hexo部署个人博客</h1><h2 id="本地安装nodejs"><a href="#本地安装nodejs" class="headerlink" title="本地安装nodejs"></a>本地安装nodejs</h2><p>可以选择下载最新几个版本的node进行安装<br><a href="https://nodejs.org/en">node官网</a></p>
@@ -133,5 +124,20 @@
         <tag>hexo</tag>
         <tag>blog</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2023/09/08/test/</url>
+    <content><![CDATA[<p><img src="/2023/09/08/test/1.jpg"></p>
+]]></content>
+      <tags>
+        <tag>image</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2023/09/08/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p><img src="/2023/09/08/%E6%B5%8B%E8%AF%95/1.jpg"></p>
+]]></content>
   </entry>
 </search>
