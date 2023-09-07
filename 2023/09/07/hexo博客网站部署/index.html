@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-hans">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="本篇主要内容是使用hexo定制个人博客网站，并将其部署到github上">
@@ -28,9 +28,10 @@
 <meta property="og:description" content="本篇主要内容是使用hexo定制个人博客网站，并将其部署到github上">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-09-07T01:37:55.000Z">
-<meta property="article:modified_time" content="2023-09-07T05:52:01.373Z">
+<meta property="article:modified_time" content="2023-09-07T07:55:21.438Z">
 <meta property="article:author" content="Nick Deng">
-<meta property="article:tag" content="hexo blog">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/">
@@ -42,7 +43,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-hans'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -100,6 +101,7 @@
       <h1 class="site-title">Nick's blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">副标题</p>
   </div>
 
   <div class="site-nav-right">
@@ -119,9 +121,9 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
 
   </li>
-        <li class="menu-item menu-item-个人简介">
+        <li class="menu-item menu-item-关于我">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>个人简介</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
 
   </li>
         <li class="menu-item menu-item-归档">
@@ -129,9 +131,9 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        <li class="menu-item menu-item-目录">
+        <li class="menu-item menu-item-分类">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>目录</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-标签">
@@ -180,6 +182,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -193,7 +196,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-09-07 09:37:55 / Modified: 13:52:01" itemprop="dateCreated datePublished" datetime="2023-09-07T09:37:55+08:00">2023-09-07</time>
+              <time title="Created: 2023-09-07 09:37:55 / Modified: 15:55:21" itemprop="dateCreated datePublished" datetime="2023-09-07T09:37:55+08:00">2023-09-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,6 +234,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
             <div class="post-description">本篇主要内容是使用hexo定制个人博客网站，并将其部署到github上</div>
 
         </div>
@@ -302,7 +312,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo clean ## 先清除一下旧的静态文件</span><br><span class="line">hexo g ## 生成新的静态文件</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署</span></span><br><span class="line">hexo deploy ## 部署命令</span><br><span class="line">hexo d ## 部署命令简写</span><br></pre></td></tr></table></figure>
 <p>如果是使用的https方式，则每次上传博客时候都要要输入临时访问令牌，而SSH方式只需要配置一次私钥和公钥，每次提交博客就不用输入用户名和密码了</p>
 <h2 id="使用别人的博客主题"><a href="#使用别人的博客主题" class="headerlink" title="使用别人的博客主题"></a>使用别人的博客主题</h2><p>1、切换到blog目录下，下载主题</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone xxx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 这里可以推荐一个主题（这里用的是社区维护版本）</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># git clone https://github.com/theme-next/hexo-theme-next themes/next themes/next</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># themes/next 是要将克隆的仓库放置在本地的路径。这里指定将主题放置在名为 &quot;next&quot; 的目录下（相对于当前工作目录）。</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 该主题下又有不同的主题可以选择</span></span></span><br><span class="line">具体可以看官方：https://github.com/iissnan/hexo-theme-next（已停止维护）</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone xxx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 这里可以推荐一个主题（这里用的是社区维护版本）</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># git clone https://github.com/theme-next/hexo-theme-next themes/next themes/next</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># themes/next 是要将克隆的仓库放置在本地的路径。这里指定将主题放置在名为 &quot;next&quot; 的目录下（相对于当前工作目录）。</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 该主题下又有不同的外观可以选择</span></span></span><br><span class="line">具体可以看官方：https://github.com/iissnan/hexo-theme-next（已停止维护）</span><br></pre></td></tr></table></figure>
 
 <p>2、打开网站配置文件blog&#x2F;_config.yml，修改默认主题</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">## theme: landscape   ## 这个是默认主题</span><br><span class="line">theme: next ## 这个是next主题</span><br></pre></td></tr></table></figure>
@@ -316,7 +326,7 @@
 <p>找到Local search，将enable设置为true</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Local search</span><br><span class="line">	enable: true</span><br></pre></td></tr></table></figure>
 
-<p>4、打开主题配置文件<code>/blog/themes/next/_config.yml</code>，修改或者添加如下内容</p>
+<p>4、打开主题配置文件<code>/blog/themes/next/_config.yml</code>，修改或者添加相关内容</p>
 <p>修改next主题下的主题</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
 
@@ -324,19 +334,37 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon-16x16.ico # 小型设备icon</span><br><span class="line">  medium: /images/favicon-32x32.ico # 中形设备icon</span><br><span class="line">  apple_touch_icon: /images/apple-favicon-128x128.ico # 苹果移动设备icon</span><br><span class="line">  safari_pinned_tab: /images/logo.svg # safari浏览器使用的icon</span><br><span class="line">  #android_manifest: /images/manifest.json # 安卓缓存文件</span><br><span class="line">  #ms_browserconfig: /images/browserconfig.xml</span><br></pre></td></tr></table></figure>
 <p>上述这些图标文件保存在<code>blog/themes/next/sources/images</code>下面</p>
 <p>修改侧边栏设置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # Sidebar Position.   # 网站侧边栏位置靠左边还是靠右边</span><br><span class="line">  position: left</span><br><span class="line">  #position: right</span><br><span class="line">	</span><br><span class="line">  # 侧边栏宽度</span><br><span class="line">  # Manual define the sidebar width. If commented, will be default for:</span><br><span class="line">  # Muse | Mist: 320</span><br><span class="line">  # Pisces | Gemini: 240</span><br><span class="line">  #width: 300</span><br><span class="line"></span><br><span class="line">  # 侧边栏显示方式</span><br><span class="line">  # Sidebar Display (only for Muse | Mist), available values:</span><br><span class="line">  #  - post    默认，随着网页加载完自动展开侧边栏</span><br><span class="line">  #  - always  总是打开侧边栏</span><br><span class="line">  #  - hide    网页加载后隐藏侧看栏，可手动打开</span><br><span class="line">  #  - remove  彻底移除侧边栏</span><br><span class="line">  display: hide</span><br><span class="line"></span><br><span class="line">  # Sidebar padding in pixels. 侧边栏内边距</span><br><span class="line">  padding: 18</span><br><span class="line">  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).</span><br><span class="line">  offset: 12</span><br><span class="line">  # Enable sidebar on narrow view (only for Muse | Mist).</span><br><span class="line">  onmobile: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # Sidebar Position.   # 网站侧边栏位置靠左边还是靠右边</span><br><span class="line">  position: left</span><br><span class="line">  #position: right</span><br><span class="line">	</span><br><span class="line">  # 侧边栏宽度</span><br><span class="line">  # Manual define the sidebar width. If commented, will be default for:</span><br><span class="line">  # Muse | Mist: 320</span><br><span class="line">  # Pisces | Gemini: 240</span><br><span class="line">  #width: 300</span><br><span class="line"></span><br><span class="line">  # 侧边栏显示方式</span><br><span class="line">  # Sidebar Display (only for Muse | Mist), available values:</span><br><span class="line">  #  - post    默认，在文章页面中又目录时显示</span><br><span class="line">  #  - always  全部页面中展示侧边栏</span><br><span class="line">  #  - hide    在所有页面中隐藏侧看栏，可手动打开</span><br><span class="line">  #  - remove  彻底移除侧边栏</span><br><span class="line">  display: hide</span><br><span class="line"></span><br><span class="line">  # Sidebar padding in pixels. 侧边栏内边距</span><br><span class="line">  padding: 18</span><br><span class="line">  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).</span><br><span class="line">  offset: 12</span><br><span class="line">  # Enable sidebar on narrow view (only for Muse | Mist).</span><br><span class="line">  onmobile: false</span><br></pre></td></tr></table></figure>
+<h2 id="添加其他侧边栏项"><a href="#添加其他侧边栏项" class="headerlink" title="添加其他侧边栏项"></a>添加其他侧边栏项</h2><p>1、切换到&#x2F;blog下执行如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &#x27;categories&#x27;</span><br><span class="line">hexo new page &#x27;tags&#x27;</span><br><span class="line">hexo new page &#x27;about&#x27;</span><br></pre></td></tr></table></figure>
+<p>执行完上述命令后就在&#x2F;source&#x2F;_posts下创建几个相应的文件夹<br>打开各自的index.md文件，以categories&#x2F;index.md威力，添加以下内容后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2023-09-07 10:13:21</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>tags页面同理</p>
+<p>3、接下来打开主题配置文件，把要用到的页面注释解开，改成如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fa fa-home                     # 主页</span><br><span class="line">  about: /about/ || fa fa-user              # 关于页</span><br><span class="line">  tags: /tags/ || fa fa-tags                # 标签页</span><br><span class="line">  categories: /categories/ || fa fa-th      # 分类页</span><br><span class="line">  archives: /archives/ || fa fa-archive     # 归档页</span><br><span class="line">  #schedule: /schedule/ || fa fa-calendar   # 计划页</span><br><span class="line">  #sitemap: /sitemap.xml || fa fa-sitemap   # 时间</span><br><span class="line">  #commonweal: /404/ || fa fa-heartbeat     # 公益404</span><br><span class="line"></span><br><span class="line"># Enable / Disable menu icons / item badges.</span><br><span class="line">menu_settings:</span><br><span class="line">  icons: true</span><br><span class="line">  badges: false</span><br></pre></td></tr></table></figure>
+
+<p>4、完成以上操作后，即可在categories页面中呈现分类，在tags页面中展示所有标签</p>
+<h2 id="博客文章写作配置"><a href="#博客文章写作配置" class="headerlink" title="博客文章写作配置"></a>博客文章写作配置</h2><h3 id="博客信息"><a href="#博客信息" class="headerlink" title="博客信息"></a>博客信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2023-09-07 09:37:55 写作日期</span><br><span class="line">tags: 标签1</span><br><span class="line">categories: 目录1</span><br><span class="line">description: 博客简介，在主页上就会只显示博客简介，点击博客后才可以阅读全篇内容</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>tags和categories的写法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 这是默认的写法，给文章添加一个分类。</span><br><span class="line">categories: 123</span><br><span class="line"></span><br><span class="line">// 将文章分类到123的子目录456下。</span><br><span class="line">categories: [123, 456]</span><br><span class="line"></span><br><span class="line">// 会将文章分类到123的子目录456下。</span><br><span class="line">categories:</span><br><span class="line">   - 123</span><br><span class="line">   - 456</span><br><span class="line"></span><br><span class="line">// 多标签写法，文章被分类到123、456以及123的子目录789这3个目录下面，官方指定写法。</span><br><span class="line">categories:</span><br><span class="line">   - [123]</span><br><span class="line">   - [456]</span><br><span class="line">   - [123, 789]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<h2 id="博客文章写作配置"><a href="#博客文章写作配置" class="headerlink" title="博客文章写作配置"></a>博客文章写作配置</h2><h3 id="博客信息"><a href="#博客信息" class="headerlink" title="博客信息"></a>博客信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2023-09-07 09:37:55 写作日期</span><br><span class="line">tags: hexo blog 标签</span><br><span class="line">categories: 博客网站部署 目录</span><br><span class="line">description: 博客简介，在主页上就会只显示博客简介，点击博客后才可以阅读全篇内容</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
 <p>如果只想让人在主页阅读博客部分内容，并显示<code>阅读全文</code>的按钮，那么可以使用<code>&lt;!--more--&gt;</code>，同时修改主题配置文件，即只可以读到该代码前面的博客内容，修改内容如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br><span class="line"></span><br><span class="line"># Read more button</span><br><span class="line"># If true, the read more button will be displayed in excerpt section.</span><br><span class="line">read_more_btn: true</span><br></pre></td></tr></table></figure>
 
 <h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[网站名称](网站链接)</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line">&lt;网站链接&gt;</span><br><span class="line"></span><br><span class="line">抑或者引用出现过的链接</span><br><span class="line">[网站名称][出现过的网站名称]</span><br></pre></td></tr></table></figure>
 
+<h3 id="修改链接样式"><a href="#修改链接样式" class="headerlink" title="修改链接样式"></a>修改链接样式</h3><p>打开文件<code>themes/next/source/css/_common/components/post/post.styl</code>，在末尾添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.post-body p a &#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #fc6423;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid #fc6423;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="大赏功能"><a href="#大赏功能" class="headerlink" title="大赏功能"></a>大赏功能</h2><p>打开主题配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">reward_settings:</span><br><span class="line">  # If true, a donate button will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: Q：如果本文对你有用，小小的意思一下啦</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.png</span><br><span class="line">  alipay: /images/alipay.png</span><br></pre></td></tr></table></figure>
+<h2 id="其他一些功能"><a href="#其他一些功能" class="headerlink" title="其他一些功能"></a>其他一些功能</h2><h3 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h3><p>打开主题配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">reward_settings:</span><br><span class="line">  # If true, a donate button will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: Q：如果本文对你有用，小小的意思一下啦(*￣3￣)╭♡</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.png</span><br><span class="line">  alipay: /images/alipay.png</span><br></pre></td></tr></table></figure>
+
+<h3 id="版权申明"><a href="#版权申明" class="headerlink" title="版权申明"></a>版权申明</h3><p>打开主题配置文件&#x2F;blog&#x2F;themes&#x2F;next&#x2F;_config.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Creative Commons 4.0 International License.</span><br><span class="line"># See: https://creativecommons.org/about/cclicenses/</span><br><span class="line"># Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span><br><span class="line"># You can set a language value if you prefer a translated version of CC license, e.g. deed.zh</span><br><span class="line"># CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org</span><br><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true #侧边栏中的版权标识</span><br><span class="line">  post: true #每篇文章底部都显示版权信息</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -350,22 +378,40 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="Nick Deng WeChat Pay">
+        <img src="/images/wechat.png" alt="Nick Deng WeChat Pay">
         <p>WeChat Pay</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="Nick Deng Alipay">
+        <img src="/images/alipay.png" alt="Nick Deng Alipay">
         <p>Alipay</p>
       </div>
 
   </div>
 </div>
 
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Nick Deng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/" title="使用hexo部署个人博客">http://example.com/2023/09/07/hexo博客网站部署/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo-blog/" rel="tag"># hexo blog</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/blog/" rel="tag"># blog</a>
           </div>
 
         
@@ -436,7 +482,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">使用hexo部署个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.1.</span> <span class="nav-text">本地安装nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装并初始化hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E7%AB%A0"><span class="nav-number">1.3.</span> <span class="nav-text">写文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">修改一些简单的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">1.5.</span> <span class="nav-text">将网站部署到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">1.6.</span> <span class="nav-text">使用别人的博客主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.7.</span> <span class="nav-text">博客文章写作配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E4%BF%A1%E6%81%AF"><span class="nav-number">1.7.1.</span> <span class="nav-text">博客信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">1.7.2.</span> <span class="nav-text">超链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">1.8.</span> <span class="nav-text">大赏功能</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">使用hexo部署个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.1.</span> <span class="nav-text">本地安装nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装并初始化hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E7%AB%A0"><span class="nav-number">1.3.</span> <span class="nav-text">写文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">修改一些简单的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">1.5.</span> <span class="nav-text">将网站部署到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">1.6.</span> <span class="nav-text">使用别人的博客主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%B6%E4%BB%96%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%A1%B9"><span class="nav-number">1.7.</span> <span class="nav-text">添加其他侧边栏项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.8.</span> <span class="nav-text">博客文章写作配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E4%BF%A1%E6%81%AF"><span class="nav-number">1.8.1.</span> <span class="nav-text">博客信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">1.8.2.</span> <span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%93%BE%E6%8E%A5%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.8.3.</span> <span class="nav-text">修改链接样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E5%8A%9F%E8%83%BD"><span class="nav-number">1.9.</span> <span class="nav-text">其他一些功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">1.9.1.</span> <span class="nav-text">打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E7%94%B3%E6%98%8E"><span class="nav-number">1.9.2.</span> <span class="nav-text">版权申明</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -456,12 +502,14 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">categories</span>
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span>
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -472,6 +520,9 @@
       <span class="links-of-author-item">
         <a href="mailto:2901047434@qq.com" title="E-Mail → mailto:2901047434@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -518,6 +569,26 @@
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
