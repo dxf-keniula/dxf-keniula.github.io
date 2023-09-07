@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>测试</title>
+    <url>/2023/09/07/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="loves"><a href="#loves" class="headerlink" title="loves"></a>loves</h1><p><a href="https://www.baidu.com/">百度一下</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是加粗吗<br><strong>这是加粗吗</strong></p>
+<p><font color=red>红色</font></p>
+<p>测试图片<br><img src="/%E6%B5%8B%E8%AF%95_files/1.jpg"></p>
+]]></content>
+      <categories>
+        <category>分类1</category>
+        <category>分类2</category>
+      </categories>
+      <tags>
+        <tag>标签1</tag>
+        <tag>标签2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用hexo部署个人博客</title>
     <url>/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h1 id="使用hexo部署个人博客"><a href="#使用hexo部署个人博客" class="headerlink" title="使用hexo部署个人博客"></a>使用hexo部署个人博客</h1><h2 id="本地安装nodejs"><a href="#本地安装nodejs" class="headerlink" title="本地安装nodejs"></a>本地安装nodejs</h2><p>可以选择下载最新几个版本的node进行安装<br><a href="https://nodejs.org/en">node官网</a></p>
@@ -118,27 +136,11 @@
 ]]></content>
       <categories>
         <category>博客网站部署</category>
+        <category>hexo</category>
       </categories>
       <tags>
         <tag>hexo</tag>
         <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2023/09/07/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="loves"><a href="#loves" class="headerlink" title="loves"></a>loves</h1><p><a href="https://www.baidu.com/">百度一下</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这是加粗吗<br><strong>这是加粗吗</strong></p>
-<p><font color=red>红色</font></p>
-]]></content>
-      <categories>
-        <category>分类1</category>
-        <category>分类2</category>
-      </categories>
-      <tags>
-        <tag>标签1</tag>
-        <tag>标签2</tag>
       </tags>
   </entry>
 </search>
