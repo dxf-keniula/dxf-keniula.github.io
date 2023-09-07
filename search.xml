@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>使用hexo部署个人博客</title>
+    <url>/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="使用hexo部署个人博客"><a href="#使用hexo部署个人博客" class="headerlink" title="使用hexo部署个人博客"></a>使用hexo部署个人博客</h1><h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><h2 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+
+<h2 id="全局安装hexo-cli"><a href="#全局安装hexo-cli" class="headerlink" title="全局安装hexo-cli"></a>全局安装hexo-cli</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>查看版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="在root目录下创建一个blog目录"><a href="#在root目录下创建一个blog目录" class="headerlink" title="在root目录下创建一个blog目录"></a>在root目录下创建一个blog目录</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换到blog目录</span></span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+
+<h2 id="在blog目录下初始化hexo"><a href="#在blog目录下初始化hexo" class="headerlink" title="在blog目录下初始化hexo"></a>在blog目录下初始化hexo</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地启动hexo"><a href="#本地启动hexo" class="headerlink" title="本地启动hexo"></a>本地启动hexo</h2><p>切换到博客项目文件下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>此时便可以访问本地的博客网站了</p>
+<h2 id="切换到-blog-source-posts目录下写文章"><a href="#切换到-blog-source-posts目录下写文章" class="headerlink" title="切换到&#x2F;blog&#x2F;source&#x2F;_posts目录下写文章"></a>切换到&#x2F;blog&#x2F;source&#x2F;_posts目录下写文章</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd source/_posts</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建一篇文章-默认生成的是md文档"><a href="#创建一篇文章-默认生成的是md文档" class="headerlink" title="创建一篇文章(默认生成的是md文档)"></a>创建一篇文章(默认生成的是md文档)</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo n &#x27;我的第一篇博客&#x27;</span><br><span class="line">hexo new &#x27;我的第一篇博客&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="编辑博客文章-使用的markdown语法编辑的文章）"><a href="#编辑博客文章-使用的markdown语法编辑的文章）" class="headerlink" title="编辑博客文章,使用的markdown语法编辑的文章）"></a>编辑博客文章,使用的markdown语法编辑的文章）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim 我的第一篇博客.md</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用qw-命令保存退出后-切换到blog目录下，使用命令生成文章"><a href="#使用qw-命令保存退出后-切换到blog目录下，使用命令生成文章" class="headerlink" title="使用qw:命令保存退出后,切换到blog目录下，使用命令生成文章"></a>使用qw:命令保存退出后,切换到blog目录下，使用命令生成文章</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">qw:</span><br><span class="line"></span><br><span class="line">cd ../..</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<h1 id="将网站部署到github"><a href="#将网站部署到github" class="headerlink" title="将网站部署到github"></a>将网站部署到github</h1><h2 id="在github上创建一个新的仓库，仓库名字必须如下格式"><a href="#在github上创建一个新的仓库，仓库名字必须如下格式" class="headerlink" title="在github上创建一个新的仓库，仓库名字必须如下格式"></a>在github上创建一个新的仓库，仓库名字必须如下格式</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">你的github名.github.io</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>该插件用于部署hexo到github上</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="编辑-config-yml文件"><a href="#编辑-config-yml文件" class="headerlink" title="编辑_config.yml文件"></a>编辑_config.yml文件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure>
+<p>在文件底部的Deployment项中进行配置，添加如下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Deployment</span><br><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: xxx.git  // 这个是github仓库地址</span><br><span class="line">	branch: master // 注意每一个冒号后面有空格</span><br></pre></td></tr></table></figure>
+
+<h2 id="部署博客项目"><a href="#部署博客项目" class="headerlink" title="部署博客项目"></a>部署博客项目</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean ## 先清除一下旧的静态文件</span><br><span class="line">hexo g ## 生成新的静态文件</span><br><span class="line">hexo deploy ## 部署命令</span><br><span class="line">hexo d ## 部署命令简写</span><br></pre></td></tr></table></figure>
+<p>接下来就是输入你的github用户名以及https密码（目前是使用临时访问令牌）</p>
+<h1 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h1><h2 id="切换到blog目录下，下载主题"><a href="#切换到blog目录下，下载主题" class="headerlink" title="切换到blog目录下，下载主题"></a>切换到blog目录下，下载主题</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone xxx themes/next</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 这里可以推荐一个主题</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># git clone https://github.com/litten/hexo-theme-next.git themes/next</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># themes/next 是要将克隆的仓库放置在本地的路径。这里指定将主题放置在名为 &quot;next&quot; 的目录下（相对于当前工作目录）。</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="重新部署"><a href="#重新部署" class="headerlink" title="重新部署"></a>重新部署</h2>]]></content>
+      <tags>
+        <tag>hexo blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2023/09/07/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>
