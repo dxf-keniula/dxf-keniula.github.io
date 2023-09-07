@@ -3,40 +3,87 @@
   <entry>
     <title>使用hexo部署个人博客</title>
     <url>/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="使用hexo部署个人博客"><a href="#使用hexo部署个人博客" class="headerlink" title="使用hexo部署个人博客"></a>使用hexo部署个人博客</h1><h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><h2 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="使用hexo部署个人博客"><a href="#使用hexo部署个人博客" class="headerlink" title="使用hexo部署个人博客"></a>使用hexo部署个人博客</h1><h2 id="本地安装nodejs"><a href="#本地安装nodejs" class="headerlink" title="本地安装nodejs"></a>本地安装nodejs</h2><p>可以选择下载最新几个版本的node进行安装<br><a href="https://nodejs.org/en">node官网</a></p>
+<h2 id="安装并初始化hexo"><a href="#安装并初始化hexo" class="headerlink" title="安装并初始化hexo"></a>安装并初始化hexo</h2><p>1、切换到root用户</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>或者某个普通文件夹下也可以</p>
+</blockquote>
+<p>2、全局安装hexo-cli</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h2 id="全局安装hexo-cli"><a href="#全局安装hexo-cli" class="headerlink" title="全局安装hexo-cli"></a>全局安装hexo-cli</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>查看版本</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 
-<h2 id="在root目录下创建一个blog目录"><a href="#在root目录下创建一个blog目录" class="headerlink" title="在root目录下创建一个blog目录"></a>在root目录下创建一个blog目录</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换到blog目录</span></span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+<p>3、在root目录（或者某一个普通目录下）下创建一个blog目录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换到blog目录</span></span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure>
 
-<h2 id="在blog目录下初始化hexo"><a href="#在blog目录下初始化hexo" class="headerlink" title="在blog目录下初始化hexo"></a>在blog目录下初始化hexo</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
+<p>4、在blog目录下初始化hexo</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
 
-<h2 id="本地启动hexo"><a href="#本地启动hexo" class="headerlink" title="本地启动hexo"></a>本地启动hexo</h2><p>切换到博客项目文件下</p>
+<blockquote>
+<p>或者上面3、4步可以简写为<code>hexo init blog</code>，表示使用hexo初始化一个文件夹</p>
+</blockquote>
+<p>5、本地启动hexo</p>
+<p>切换到博客项目文件下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>此时便可以访问本地的博客网站了</p>
-<h2 id="切换到-blog-source-posts目录下写文章"><a href="#切换到-blog-source-posts目录下写文章" class="headerlink" title="切换到&#x2F;blog&#x2F;source&#x2F;_posts目录下写文章"></a>切换到&#x2F;blog&#x2F;source&#x2F;_posts目录下写文章</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd source/_posts</span><br></pre></td></tr></table></figure>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>1、切换到&#x2F;blog&#x2F;source&#x2F;_posts目录下写文章</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd source/_posts</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建一篇文章-默认生成的是md文档"><a href="#创建一篇文章-默认生成的是md文档" class="headerlink" title="创建一篇文章(默认生成的是md文档)"></a>创建一篇文章(默认生成的是md文档)</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo n &#x27;我的第一篇博客&#x27;</span><br><span class="line">hexo new &#x27;我的第一篇博客&#x27;</span><br></pre></td></tr></table></figure>
+<p>2、 创建一篇文章(默认生成的是md文档)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">会自动创建一个以md为后缀的文件，即markdown</span></span><br><span class="line">hexo new &#x27;我的第一篇博客&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">简写如下</span></span><br><span class="line">hexo n &#x27;我的第一篇博客&#x27;</span><br></pre></td></tr></table></figure>
 
-<h2 id="编辑博客文章-使用的markdown语法编辑的文章）"><a href="#编辑博客文章-使用的markdown语法编辑的文章）" class="headerlink" title="编辑博客文章,使用的markdown语法编辑的文章）"></a>编辑博客文章,使用的markdown语法编辑的文章）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim 我的第一篇博客.md</span><br></pre></td></tr></table></figure>
+<p>3、编辑博客文章,使用markdown语法编辑文章</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim 我的第一篇博客.md</span><br></pre></td></tr></table></figure>
+<p>或者可以打开ide软件进行编辑也可以</p>
+<p>4、保存博客并生成静态文件 </p>
+<p>使用qw:命令保存退出后,切换到blog目录下，使用命令生成文章</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">退出编辑模式</span></span><br><span class="line">qw:</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换回blog目录</span></span><br><span class="line">cd ../..</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">根据md文档生成html静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下面是简写</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用qw-命令保存退出后-切换到blog目录下，使用命令生成文章"><a href="#使用qw-命令保存退出后-切换到blog目录下，使用命令生成文章" class="headerlink" title="使用qw:命令保存退出后,切换到blog目录下，使用命令生成文章"></a>使用qw:命令保存退出后,切换到blog目录下，使用命令生成文章</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">qw:</span><br><span class="line"></span><br><span class="line">cd ../..</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="修改一些简单的配置"><a href="#修改一些简单的配置" class="headerlink" title="修改一些简单的配置"></a>修改一些简单的配置</h2><p>打开blog&#x2F;_config.yml文件</p>
+<p>修改整个网站&#x2F;个人的相关信息，修改如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: who&#x27;s blog       # 网站的名字</span><br><span class="line">subtitle: &#x27;&#x27;            # 网站的副标题</span><br><span class="line">description: &#x27;coding&#x27;   # 个人描述</span><br><span class="line">keywords:               # seo 关键词</span><br><span class="line">author: Nick Deng       # 网站作者</span><br><span class="line">language: zh-hans       # 使用的语言，这个是简体汉语</span><br><span class="line">timezone: &#x27;&#x27;            # 时间</span><br></pre></td></tr></table></figure>
 
-<h1 id="将网站部署到github"><a href="#将网站部署到github" class="headerlink" title="将网站部署到github"></a>将网站部署到github</h1><h2 id="在github上创建一个新的仓库，仓库名字必须如下格式"><a href="#在github上创建一个新的仓库，仓库名字必须如下格式" class="headerlink" title="在github上创建一个新的仓库，仓库名字必须如下格式"></a>在github上创建一个新的仓库，仓库名字必须如下格式</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">你的github名.github.io</span><br></pre></td></tr></table></figure>
+<p>在文件任意合理位置添加如下内容，打开博客搜索功能</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># search</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
 
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<h2 id="将网站部署到github"><a href="#将网站部署到github" class="headerlink" title="将网站部署到github"></a>将网站部署到github</h2><p>1、在github上创建一个新的仓库，仓库名字必须如下格式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">你的github名.github.io</span><br></pre></td></tr></table></figure>
+
+<p>2、安装一键部署的插件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 <p>该插件用于部署hexo到github上</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="编辑-config-yml文件"><a href="#编辑-config-yml文件" class="headerlink" title="编辑_config.yml文件"></a>编辑_config.yml文件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure>
+<p>3、编辑blog&#x2F;_config.yml文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure>
+
 <p>在文件底部的Deployment项中进行配置，添加如下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Deployment</span><br><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: xxx.git  // 这个是github仓库地址</span><br><span class="line">	branch: master // 注意每一个冒号后面有空格</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Deployment</span><br><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: xxx.git  // 这个是github仓库地址，可以是https/SSH</span><br><span class="line">	branch: master // 注意每一个冒号后面都有一个空格</span><br></pre></td></tr></table></figure>
 
-<h2 id="部署博客项目"><a href="#部署博客项目" class="headerlink" title="部署博客项目"></a>部署博客项目</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean ## 先清除一下旧的静态文件</span><br><span class="line">hexo g ## 生成新的静态文件</span><br><span class="line">hexo deploy ## 部署命令</span><br><span class="line">hexo d ## 部署命令简写</span><br></pre></td></tr></table></figure>
-<p>接下来就是输入你的github用户名以及https密码（目前是使用临时访问令牌）</p>
-<h1 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h1><h2 id="切换到blog目录下，下载主题"><a href="#切换到blog目录下，下载主题" class="headerlink" title="切换到blog目录下，下载主题"></a>切换到blog目录下，下载主题</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone xxx themes/next</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 这里可以推荐一个主题</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># git clone https://github.com/litten/hexo-theme-next.git themes/next</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># themes/next 是要将克隆的仓库放置在本地的路径。这里指定将主题放置在名为 &quot;next&quot; 的目录下（相对于当前工作目录）。</span></span></span><br></pre></td></tr></table></figure>
+<p>4、开始部署博客项目</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean ## 先清除一下旧的静态文件</span><br><span class="line">hexo g ## 生成新的静态文件</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署</span></span><br><span class="line">hexo deploy ## 部署命令</span><br><span class="line">hexo d ## 部署命令简写</span><br></pre></td></tr></table></figure>
+<p>如果是使用的https方式，则每次上传博客时候都要要输入临时访问令牌，而SSH方式只需要配置一次私钥和公钥，每次提交博客就不用输入用户名和密码了</p>
+<h2 id="使用别人的博客主题"><a href="#使用别人的博客主题" class="headerlink" title="使用别人的博客主题"></a>使用别人的博客主题</h2><p>1、切换到blog目录下，下载主题</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone xxx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 这里可以推荐一个主题（这里用的是社区维护版本）</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># git clone https://github.com/theme-next/hexo-theme-next themes/next themes/next</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># themes/next 是要将克隆的仓库放置在本地的路径。这里指定将主题放置在名为 &quot;next&quot; 的目录下（相对于当前工作目录）。</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 该主题下又有不同的主题可以选择</span></span></span><br><span class="line">具体可以看官方：https://github.com/iissnan/hexo-theme-next（已停止维护）</span><br></pre></td></tr></table></figure>
 
-<h2 id="重新部署"><a href="#重新部署" class="headerlink" title="重新部署"></a>重新部署</h2>]]></content>
+<p>2、打开网站配置文件blog&#x2F;_config.yml，修改默认主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">## theme: landscape   ## 这个是默认主题</span><br><span class="line">theme: next ## 这个是next主题</span><br></pre></td></tr></table></figure>
+
+<p>3、打开主题配置文件<code>/blog/themes/next/_config.yml</code>，修改或者添加如下内容</p>
+<p>修改next主题下的主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
+
+<p>修改网站icon和个人头像等信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon-16x16.ico # 小型设备icon</span><br><span class="line">  medium: /images/favicon-32x32.ico # 中形设备icon</span><br><span class="line">  apple_touch_icon: /images/apple-favicon-128x128.ico # 苹果移动设备icon</span><br><span class="line">  safari_pinned_tab: /images/logo.svg # safari浏览器使用的icon</span><br><span class="line">  #android_manifest: /images/manifest.json # 安卓缓存文件</span><br><span class="line">  #ms_browserconfig: /images/browserconfig.xml</span><br></pre></td></tr></table></figure>
+<p>上述这些图标文件保存在<code>blog/themes/next/sources/images</code>下面</p>
+<p>修改侧边栏设置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # Sidebar Position.   # 网站侧边栏位置靠左边还是靠右边</span><br><span class="line">  position: left</span><br><span class="line">  #position: right</span><br><span class="line">	</span><br><span class="line">  # 侧边栏宽度</span><br><span class="line">  # Manual define the sidebar width. If commented, will be default for:</span><br><span class="line">  # Muse | Mist: 320</span><br><span class="line">  # Pisces | Gemini: 240</span><br><span class="line">  #width: 300</span><br><span class="line"></span><br><span class="line">  # 侧边栏显示方式</span><br><span class="line">  # Sidebar Display (only for Muse | Mist), available values:</span><br><span class="line">  #  - post    默认，随着网页加载完自动展开侧边栏</span><br><span class="line">  #  - always  总是打开侧边栏</span><br><span class="line">  #  - hide    网页加载后隐藏侧看栏，可手动打开</span><br><span class="line">  #  - remove  彻底移除侧边栏</span><br><span class="line">  display: hide</span><br><span class="line"></span><br><span class="line">  # Sidebar padding in pixels. 侧边栏内边距</span><br><span class="line">  padding: 18</span><br><span class="line">  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).</span><br><span class="line">  offset: 12</span><br><span class="line">  # Enable sidebar on narrow view (only for Muse | Mist).</span><br><span class="line">  onmobile: false</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客网站部署</category>
+      </categories>
       <tags>
         <tag>hexo blog</tag>
       </tags>
@@ -44,6 +91,16 @@
   <entry>
     <title>测试</title>
     <url>/2023/09/07/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="loves"><a href="#loves" class="headerlink" title="loves"></a>loves</h1><p><a href="https://www.baidu.com/">百度一下</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是加粗吗<br><strong>这是加粗吗</strong></p>
+<p><font color=red>红色</font></p>
+]]></content>
+      <categories>
+        <category>分类1</category>
+      </categories>
+      <tags>
+        <tag>none</tag>
+      </tags>
   </entry>
 </search>
