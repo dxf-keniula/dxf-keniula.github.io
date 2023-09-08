@@ -8,11 +8,11 @@ description: 本篇主要内容是使用hexo定制个人博客网站，并将其
 
 # 使用hexo部署个人博客
 
-## 本地安装nodejs
+## 1. 本地安装nodejs
 可以选择下载最新几个版本的node进行安装
 [node官网](https://nodejs.org/en)
 
-## 安装并初始化hexo
+## 2. 安装并初始化hexo
 1、切换到root用户
 ```shell
 sudo su
@@ -58,7 +58,7 @@ hexo server
 ```
 此时便可以访问本地的博客网站了
 
-## 写文章
+## 3. 写文章
 1、切换到/blog/source/_posts目录下写文章
 ```
 cd source/_posts
@@ -95,7 +95,7 @@ hexo generate
 hexo g
 ```
 
-## 修改一些简单的配置
+## 4. 修改一些简单的配置
 打开blog/_config.yml文件
 
 修改整个网站/个人的相关信息，修改如下
@@ -110,7 +110,7 @@ language: zh-hans       # 使用的语言，这个是简体汉语
 timezone: ''            # 时间
 ```
 
-## 将网站部署到github
+## 5. 将网站部署到github
 1、在github上创建一个新的仓库，仓库名字必须如下格式
 ``` shell
 你的github名.github.io
@@ -148,7 +148,7 @@ hexo d ## 部署命令简写
 ```
 如果是使用的https方式，则每次上传博客时候都要要输入临时访问令牌，而SSH方式只需要配置一次私钥和公钥，每次提交博客就不用输入用户名和密码了
 
-## 使用别人的博客主题
+## 6. 使用别人的博客主题
 1、切换到blog目录下，下载主题
 ```shell
 git clone xxx
@@ -243,7 +243,7 @@ sidebar:
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
 ```
-## 添加其他侧边栏项
+## 7. 添加其他侧边栏项
 
 1、切换到/blog下执行如下命令
 ```
@@ -282,8 +282,8 @@ menu_settings:
 
 4、完成以上操作后，即可在categories页面中呈现分类，在tags页面中展示所有标签
 
-## 博客文章写作配置
-### 博客信息
+## 8. 博客文章写作配置
+### 8.1 博客信息
 ```
 ---
 title: 文章标题
@@ -327,7 +327,7 @@ excerpt_description: true
 read_more_btn: true
 ```
 
-### 超链接
+### 8.2 超链接
 ```
 [网站名称](网站链接)
 
@@ -338,7 +338,7 @@ read_more_btn: true
 [网站名称][出现过的网站名称]
 ```
 
-### 修改链接样式
+### 8.3 修改链接样式
 
 打开文件`themes/next/source/css/_common/components/post/post.styl`，在末尾添加
 ```
@@ -354,8 +354,22 @@ read_more_btn: true
 }
 ```
 
-## 其他一些功能
-### 打赏功能
+### 8.4 关闭博客目录编号
+
+默认的主题会自动给我们的目录带上编号，通过修改主题配置文件可以关闭，如下：
+
+```
+toc:
+	enable: true
+	number: false # 改为false即可关闭目录自动计数
+	wrap: fase
+```
+
+
+
+## 9. 其他一些功能
+
+### 9.1 打赏功能
 打开主题配置文件
 ```
 reward_settings:
@@ -369,7 +383,7 @@ reward:
   alipay: /images/alipay.png
 ```
 
-### 版权申明
+### 9.2 版权申明
 打开主题配置文件/blog/themes/next/_config.yml
 ```
 # Creative Commons 4.0 International License.
@@ -384,7 +398,7 @@ creative_commons:
   language:
 ```
 
-### 图片粘贴上传
+### 9.3 图片粘贴上传
 
 > 注意：我这里md文档编辑使用的工具是typora，同时在typora的设置里设置好了图片保存路径是当前文件同级目录下，例如：有一个test.md文档，那么该文档相关的图片全部保存在和test.md同级的test目录下，也就是/test/xxx.png，这里图片保存位置可以在typora的设置里面修改，如果是其他编辑器，那么你也同样需要把图片保存路径改下
 >
@@ -416,3 +430,11 @@ npm i hexo -renderer-marked --save
 	// ...
 }
 ```
+
+
+
+### 9.4 添加站点访问次数
+
+
+
+### 9.5 添加评论系统
