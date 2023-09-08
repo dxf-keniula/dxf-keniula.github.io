@@ -27,12 +27,14 @@
 <meta property="og:site_name" content="Nick&#39;s blog">
 <meta property="og:description" content="本篇主要内容是使用hexo定制个人博客网站，并将其部署到github上">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/image-20230908090500904.png">
 <meta property="article:published_time" content="2023-09-07T01:37:55.000Z">
-<meta property="article:modified_time" content="2023-09-07T07:57:23.570Z">
+<meta property="article:modified_time" content="2023-09-08T01:12:03.069Z">
 <meta property="article:author" content="Nick Deng">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/image-20230908090500904.png">
 
 <link rel="canonical" href="http://example.com/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/">
 
@@ -219,10 +221,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-09-07 09:37:55 / Modified: 15:57:23" itemprop="dateCreated datePublished" datetime="2023-09-07T09:37:55+08:00">2023-09-07</time>
+              <time title="Created: 2023-09-07 09:37:55" itemprop="dateCreated datePublished" datetime="2023-09-07T09:37:55+08:00">2023-09-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-08 09:12:03" itemprop="dateModified" datetime="2023-09-08T09:12:03+08:00">2023-09-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -369,6 +377,18 @@
 <h3 id="版权申明"><a href="#版权申明" class="headerlink" title="版权申明"></a>版权申明</h3><p>打开主题配置文件&#x2F;blog&#x2F;themes&#x2F;next&#x2F;_config.yml</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Creative Commons 4.0 International License.</span><br><span class="line"># See: https://creativecommons.org/about/cclicenses/</span><br><span class="line"># Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span><br><span class="line"># You can set a language value if you prefer a translated version of CC license, e.g. deed.zh</span><br><span class="line"># CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org</span><br><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true #侧边栏中的版权标识</span><br><span class="line">  post: true #每篇文章底部都显示版权信息</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
 
+<h3 id="图片粘贴上传"><a href="#图片粘贴上传" class="headerlink" title="图片粘贴上传"></a>图片粘贴上传</h3><blockquote>
+<p>注意：我这里md文档编辑使用的工具是typora，同时在typora的设置里设置好了图片保存路径是当前文件同级目录下，例如：有一个test.md文档，那么该文档相关的图片全部保存在和test.md同级的test目录下，也就是&#x2F;test&#x2F;xxx.png，这里图片保存位置可以在typora的设置里面修改，如果是其他编辑器，那么你也同样需要把图片保存路径改下</p>
+<p><img src="/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/image-20230908090500904.png" alt="image-20230908090500904"></p>
+</blockquote>
+<p>1、安装hexo-renderer-marked插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo -renderer-marked --save</span><br></pre></td></tr></table></figure>
+
+<p>2、<strong>blog&#x2F;_config.yml  &#x3D;&gt; post_asset_folder: true</strong><br>开启这个配置后，每次<code>hexo n md文档</code>,都会在同级生成一个以<strong>md文档名</strong>为名的文件夹，用来保存md中的静态资源文件，例如图片，当然这里的文件夹也可以手动创建，但需要与md文档同名</p>
+<p>&#96;&#96;</p>
+<p>3、可以发现，经过<code>hexo g</code>后，图片文件会和生成的静态index.html保存在同一级目录下，<code>/blog/public/2023/09/08</code>下可以看到。</p>
+<p>而每次粘贴图片会自带前缀，例如<code>test/xxx.png</code>，这样的结果就是我们可以在本地看到图片，但却无法在部署后看到图片，解决方法是，修改脚本自动去除前缀，让文件在部署之后能访问到图片，到&#x2F;node_modules&#x2F;hexo-renderer-marked&#x2F;lib&#x2F;renderer.js下，添加去除前缀的代码即可，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Prepend root to image path</span></span><br><span class="line">  <span class="title function_">image</span>(<span class="params">href, title, text</span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(href, <span class="string">&quot; ========= &quot;</span>);</span><br><span class="line">	<span class="keyword">if</span>(href.<span class="title function_">indexOf</span>(<span class="string">&#x27;/&#x27;</span>)&gt;-<span class="number">1</span>)&#123;</span><br><span class="line">		href = href.<span class="title function_">split</span>(<span class="string">&#x27;/&#x27;</span>)[<span class="number">1</span>]</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -422,13 +442,6 @@
 
 
         
-    <div class="post-nav">
-      <div class="post-nav-item"></div>
-      <div class="post-nav-item">
-    <a href="/2023/09/08/test/" rel="next" title="test">
-      test <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
       </footer>
     
   </article>
@@ -486,7 +499,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">使用hexo部署个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.1.</span> <span class="nav-text">本地安装nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装并初始化hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E7%AB%A0"><span class="nav-number">1.3.</span> <span class="nav-text">写文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">修改一些简单的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">1.5.</span> <span class="nav-text">将网站部署到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">1.6.</span> <span class="nav-text">使用别人的博客主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%B6%E4%BB%96%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%A1%B9"><span class="nav-number">1.7.</span> <span class="nav-text">添加其他侧边栏项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.8.</span> <span class="nav-text">博客文章写作配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E4%BF%A1%E6%81%AF"><span class="nav-number">1.8.1.</span> <span class="nav-text">博客信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">1.8.2.</span> <span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%93%BE%E6%8E%A5%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.8.3.</span> <span class="nav-text">修改链接样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E5%8A%9F%E8%83%BD"><span class="nav-number">1.9.</span> <span class="nav-text">其他一些功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">1.9.1.</span> <span class="nav-text">打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E7%94%B3%E6%98%8E"><span class="nav-number">1.9.2.</span> <span class="nav-text">版权申明</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">使用hexo部署个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.1.</span> <span class="nav-text">本地安装nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装并初始化hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E7%AB%A0"><span class="nav-number">1.3.</span> <span class="nav-text">写文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">修改一些简单的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">1.5.</span> <span class="nav-text">将网站部署到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">1.6.</span> <span class="nav-text">使用别人的博客主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%B6%E4%BB%96%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%A1%B9"><span class="nav-number">1.7.</span> <span class="nav-text">添加其他侧边栏项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.8.</span> <span class="nav-text">博客文章写作配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E4%BF%A1%E6%81%AF"><span class="nav-number">1.8.1.</span> <span class="nav-text">博客信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">1.8.2.</span> <span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%93%BE%E6%8E%A5%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.8.3.</span> <span class="nav-text">修改链接样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E5%8A%9F%E8%83%BD"><span class="nav-number">1.9.</span> <span class="nav-text">其他一些功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">1.9.1.</span> <span class="nav-text">打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E7%94%B3%E6%98%8E"><span class="nav-number">1.9.2.</span> <span class="nav-text">版权申明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E7%B2%98%E8%B4%B4%E4%B8%8A%E4%BC%A0"><span class="nav-number">1.9.3.</span> <span class="nav-text">图片粘贴上传</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -501,7 +514,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -512,7 +525,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

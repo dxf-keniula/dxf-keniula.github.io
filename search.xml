@@ -115,7 +115,19 @@
 
 <h3 id="版权申明"><a href="#版权申明" class="headerlink" title="版权申明"></a>版权申明</h3><p>打开主题配置文件&#x2F;blog&#x2F;themes&#x2F;next&#x2F;_config.yml</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Creative Commons 4.0 International License.</span><br><span class="line"># See: https://creativecommons.org/about/cclicenses/</span><br><span class="line"># Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span><br><span class="line"># You can set a language value if you prefer a translated version of CC license, e.g. deed.zh</span><br><span class="line"># CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org</span><br><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true #侧边栏中的版权标识</span><br><span class="line">  post: true #每篇文章底部都显示版权信息</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
-]]></content>
+
+<h3 id="图片粘贴上传"><a href="#图片粘贴上传" class="headerlink" title="图片粘贴上传"></a>图片粘贴上传</h3><blockquote>
+<p>注意：我这里md文档编辑使用的工具是typora，同时在typora的设置里设置好了图片保存路径是当前文件同级目录下，例如：有一个test.md文档，那么该文档相关的图片全部保存在和test.md同级的test目录下，也就是&#x2F;test&#x2F;xxx.png，这里图片保存位置可以在typora的设置里面修改，如果是其他编辑器，那么你也同样需要把图片保存路径改下</p>
+<p><img src="/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/image-20230908090500904.png" alt="image-20230908090500904"></p>
+</blockquote>
+<p>1、安装hexo-renderer-marked插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i hexo -renderer-marked --save</span><br></pre></td></tr></table></figure>
+
+<p>2、<strong>blog&#x2F;_config.yml  &#x3D;&gt; post_asset_folder: true</strong><br>开启这个配置后，每次<code>hexo n md文档</code>,都会在同级生成一个以<strong>md文档名</strong>为名的文件夹，用来保存md中的静态资源文件，例如图片，当然这里的文件夹也可以手动创建，但需要与md文档同名</p>
+<p>&#96;&#96;</p>
+<p>3、可以发现，经过<code>hexo g</code>后，图片文件会和生成的静态index.html保存在同一级目录下，<code>/blog/public/2023/09/08</code>下可以看到。</p>
+<p>而每次粘贴图片会自带前缀，例如<code>test/xxx.png</code>，这样的结果就是我们可以在本地看到图片，但却无法在部署后看到图片，解决方法是，修改脚本自动去除前缀，让文件在部署之后能访问到图片，到&#x2F;node_modules&#x2F;hexo-renderer-marked&#x2F;lib&#x2F;renderer.js下，添加去除前缀的代码即可，如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Prepend root to image path</span></span><br><span class="line">  <span class="title function_">image</span>(<span class="params">href, title, text</span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(href, <span class="string">&quot; ========= &quot;</span>);</span><br><span class="line">	<span class="keyword">if</span>(href.<span class="title function_">indexOf</span>(<span class="string">&#x27;/&#x27;</span>)&gt;-<span class="number">1</span>)&#123;</span><br><span class="line">		href = href.<span class="title function_">split</span>(<span class="string">&#x27;/&#x27;</span>)[<span class="number">1</span>]</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>博客网站部署</category>
         <category>hexo</category>
@@ -124,20 +136,5 @@
         <tag>hexo</tag>
         <tag>blog</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2023/09/08/test/</url>
-    <content><![CDATA[<p><img src="/2023/09/08/test/1.jpg"></p>
-]]></content>
-      <tags>
-        <tag>image</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2023/09/08/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p><img src="/2023/09/08/%E6%B5%8B%E8%AF%95/1.jpg"></p>
-]]></content>
   </entry>
 </search>
