@@ -365,8 +365,6 @@ toc:
 	wrap: fase
 ```
 
-
-
 ## 9. 其他一些功能
 
 ### 9.1 打赏功能
@@ -433,8 +431,96 @@ npm i hexo -renderer-marked --save
 
 
 
-### 9.4 添加站点访问次数
+### 9.4 添加站点访问次数显示
+
+#### 方式一：使用不蒜子
+目前不蒜子已经集成到next主题中了，所以只需要开启如下配置即可。但如果想要个性化一点，那么就需要到layout文件夹里面去进行修改
+
+```
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: fa fa-eye
+```
+
+如下图：
+
+![image-20230909100330459](hexo博客网站部署/image-20230909100330459.png)
+
+方式二：使用LeanCloud
+
+同样的，目前LeanCloud也集成到next主题中，只需要开启配置并注册一个LeanCloud账号即可
+
+在这里[注册LeanCloud账号](https://console.leancloud.cn/)
+
+在主题配置文件中开启leanCloud
+
+```
+leancloud_visitors:
+  enable: true
+  app_id: 应用ID
+  app_key: 应用Key
+  # Required for apps from CN region
+  server_url: 服务器地址
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  # If you don't care about security in leancloud counter and just want to use it directly
+  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+  security: true
+```
+
+创建应用
+
+![image-20230909104336511](hexo博客网站部署/image-20230909104336511.png)
+
+到侧边栏的数据存储/结构化数据下面创建class
+
+![image-20230909104534751](hexo博客网站部署/image-20230909104534751.png)
+
+然后在侧边栏的设置/应用凭证即可获取到appID等信息，填到配置项中即可。让后重新生成静态文件并部署博客项目
 
 
 
 ### 9.5 添加评论系统
+
+待补充
+
+## 10. 博客源文件上传
+因Github Page要求使用master分支作为发布网站的源代码，我们只能用master分支来保存hexo生成的静态网页，
+对于博客源码，可以新建一个source分支来存储。在github上打开Pages对应的仓库，也就是以"http://username.github.io"命名的仓库，然后建立一个source分支。
+这里我们选择将相关源文件全部上传至source分支下。
+### 远程仓库创建source分支
+
+### 将本地仓库（也就是blog仓库）与远程仓库相关联
+
+```bash
+# 首先将blog目录初始化为git仓库，在blog目录的命令行下执行如下代码
+git init
+git config --local user.name xxx
+git config --lcoal user.email xxx
+
+# 然后就是与远程仓库相关联
+git remote add origin 仓库地址xxx
+```
+
+### 创建.gitignore文件忽略静态文件的上传
+忽略如下文件：
+```
+/node_modules/
+/public/
+.DS_Store
+db.json
+deploy*/
+```
+
+> 其中最重要的是`deploy*/`,而deploy_git文件是git子模块的上传文件，不忽略的话git会报错。
+
+### 上传源文件
+```
+git add .
+git coommit -m '上传'
+git push origin source
+```
