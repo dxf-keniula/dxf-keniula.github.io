@@ -143,6 +143,13 @@
 <p>同样的，目前LeanCloud也集成到next主题中，只需要开启配置并注册一个LeanCloud账号即可</p>
 <p>在这里<a href="https://console.leancloud.cn/">注册LeanCloud账号</a></p>
 <p>在主题配置文件中开启leanCloud</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">leancloud_visitors:</span><br><span class="line">  enable: true</span><br><span class="line">  app_id: 应用ID</span><br><span class="line">  app_key: 应用Key</span><br><span class="line">  # Required for apps from CN region</span><br><span class="line">  server_url: 服务器地址</span><br><span class="line">  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span><br><span class="line">  # If you don&#x27;t care about security in leancloud counter and just want to use it directly</span><br><span class="line">  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.</span><br><span class="line">  security: true</span><br></pre></td></tr></table></figure>
+
+<p>创建应用</p>
+<p><img src="/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/image-20230909104336511.png" alt="image-20230909104336511"></p>
+<p>到侧边栏的数据存储&#x2F;结构化数据下面创建class</p>
+<p><img src="/2023/09/07/hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/image-20230909104534751.png" alt="image-20230909104534751"></p>
+<p>然后在侧边栏的设置&#x2F;应用凭证即可获取到appID等信息，填到配置项中即可。让后重新生成静态文件并部署博客项目</p>
 <h3 id="9-5-添加评论系统"><a href="#9-5-添加评论系统" class="headerlink" title="9.5 添加评论系统"></a>9.5 添加评论系统</h3><p>待补充</p>
 <h2 id="10-博客源文件上传"><a href="#10-博客源文件上传" class="headerlink" title="10. 博客源文件上传"></a>10. 博客源文件上传</h2><p>因Github Page要求使用master分支作为发布网站的源代码，我们只能用master分支来保存hexo生成的静态网页，<br>对于博客源码，可以新建一个source分支来存储。在github上打开Pages对应的仓库，也就是以”<a href="http://username.github.io"命名的仓库,然后建立一个source分支./">http://username.github.io&quot;命名的仓库，然后建立一个source分支。</a><br>这里我们选择将相关源文件全部上传至source分支下。</p>
 <h3 id="远程仓库创建source分支"><a href="#远程仓库创建source分支" class="headerlink" title="远程仓库创建source分支"></a>远程仓库创建source分支</h3><h3 id="将本地仓库（也就是blog仓库）与远程仓库相关联"><a href="#将本地仓库（也就是blog仓库）与远程仓库相关联" class="headerlink" title="将本地仓库（也就是blog仓库）与远程仓库相关联"></a>将本地仓库（也就是blog仓库）与远程仓库相关联</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 首先将blog目录初始化为git仓库，在blog目录的命令行下执行如下代码</span></span><br><span class="line">git init</span><br><span class="line">git config --<span class="built_in">local</span> user.name xxx</span><br><span class="line">git config --lcoal user.email xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后就是与远程仓库相关联</span></span><br><span class="line">git remote add origin 仓库地址xxx</span><br></pre></td></tr></table></figure>
